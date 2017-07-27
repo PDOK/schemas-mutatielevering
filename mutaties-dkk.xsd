@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:mld="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        xmlns:gbkn="http://www.kadaster.nl/gbkn"
+        xmlns:brk_krt="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
+        targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0" elementFormDefault="qualified">
+    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        schemaLocation="mutaties-generiek.xsd"/>
+    <xs:import namespace="http://www.kadaster.nl/gbkn" schemaLocation="http://www.kadaster.nl/schemas/GBKN/gbkn.xsd"/>
+    <xs:import namespace="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
+        schemaLocation="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101/brkkadastralekaart_v1_1_0.xsd"/>
+    <xs:element name="dkkMutaties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ml:mutatieBericht"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="dkkObject" type="mld:dkkObject" substitutionGroup="ml:modelObject"/>
+    <xs:complexType name="dkkObject">
+        <xs:complexContent>
+            <xs:extension base="ml:modelObject">
+                <xs:choice>
+                    <xs:element ref="gbkn:Annotatie"/>
+                    <xs:element ref="gbkn:Bebouwing"/>
+                    <xs:element ref="brk_krt:KadastraleGrens"/>
+                    <xs:element ref="brk_krt:Perceel"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        xmlns:citygml="http://www.opengis.net/citygml/2.0"
+        targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0" elementFormDefault="qualified">
+    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        schemaLocation="mutaties-generiek.xsd"/>
+    <xs:import namespace="http://www.opengis.net/citygml/2.0"
+        schemaLocation="http://schemas.opengis.net/citygml/2.0/cityGMLBase.xsd"/>
+    <xs:element name="bgtMutaties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ml:mutatieBericht"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="bgtObject" type="mlb:bgtObject" substitutionGroup="ml:modelObject"/>
+    <xs:complexType name="bgtObject">
+        <xs:complexContent>
+            <xs:extension base="ml:modelObject">
+                <xs:sequence>
+                    <xs:element ref="citygml:cityObjectMember"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

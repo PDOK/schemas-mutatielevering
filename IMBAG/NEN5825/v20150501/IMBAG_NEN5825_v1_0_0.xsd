@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:nen="http://www.kadaster.nl/schemas/IMBAG/NEN5825/v20150501"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.kadaster.nl/schemas/IMBAG/NEN5825/v20150501"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0-2">
+   <xs:annotation>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/uri">http://www.kadaster.nl/schemas/IMBAG/NEN5825</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/version">1.0.0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/phase">2</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/release">20150501</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/generated">2015-06-30 11:32:20</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/svn">$Id$</xs:appinfo>
+      <xs:documentation source="http://www.imvertor.org/schema-info/file-location">NEN5825/v20150501/IMBAG_NEN5825_v1_0_0.xsd</xs:documentation>
+      <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+            This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+        </xs:documentation>
+      <xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Package ten behoeve van het toevoegen van de verkorte naam openbareruimte. Deze is overgenomen uit het LV-BAG producten model. </xs:documentation>
+   </xs:annotation>
+   <xs:element name="NEN5822" type="nen:NEN5822" abstract="false"/>
+   <xs:complexType name="NEN5822" abstract="false">
+      <xs:sequence>
+         <xs:element name="verkorteNaam" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">In de BAG wordt het object ‘Openbare ruimte’ geleverd, welke als authentiek gegeven het attribuut ‘naam openbare ruimte’ bevat. Indien dit BAG-attribuut een lengte heeft van meer dan 24 dan wordt er in de BAG producten een aanvullend gegeven meegeleverd welke is ingekort2 op basis van de ‘NEN5822:2002 NL’ standaard tot een lengte van 24 of minder.
+Het aanvullende gegeven wordt geleverd via het attribuut ‘verkorte naam openbare ruimte’ en dit is géén authentiek gegeven van de BAG.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="24"/>
+                  <xs:pattern value="\S.*"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0" elementFormDefault="qualified">
+    <xs:element name="mutatieBericht">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dataset" type="xs:string"/>
+                <xs:element name="inhoud" type="ml:inhoud"/>
+                <!-- TODO meer metadata -->
+                <xs:element name="mutatieGroep" type="ml:mutatieGroep" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="inhoud">
+        <xs:sequence>
+            <xs:element name="gebied" type="xs:string"/>
+            <xs:element name="periode" type="ml:periode"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="periode">
+        <xs:sequence>
+            <xs:element name="beginInclusief" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>Tijdstip van de mutaties zelf (niet de geldigheid van de gegevens)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eindExclusief" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>Tijdstip van de mutaties zelf (niet de geldigheid van de gegevens)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mutatieGroep">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="toevoeging" type="ml:toevoeging"/>
+            <xs:element name="wijziging" type="ml:wijziging"/>
+            <xs:element name="verwijdering" type="ml:verwijdering"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Toevoeging -->
+    <xs:complexType name="toevoeging">
+        <xs:sequence>
+            <xs:element name="wordt" type="ml:toestand"/>
+        </xs:sequence>
+        <xs:attribute name="objectType" type="xs:string"/>
+        <xs:attribute name="objectId" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Wijziging -->
+    <xs:complexType name="wijziging">
+        <xs:sequence>
+            <xs:element name="was" type="ml:toestand"/>
+            <xs:element name="wordt" type="ml:toestand"/>
+        </xs:sequence>
+        <xs:attribute name="objectType" type="xs:string"/>
+        <xs:attribute name="objectId" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Verwijdering -->
+    <xs:complexType name="verwijdering">
+        <xs:sequence>
+            <xs:element name="was" type="ml:toestand"/>
+        </xs:sequence>
+        <xs:attribute name="objectType" type="xs:string"/>
+        <xs:attribute name="objectId" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Was of wordt -->
+    <xs:complexType name="toestand">
+        <xs:sequence>
+            <xs:element ref="ml:modelObject"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Object uit het datamodel van de dataset -->
+    <xs:element name="modelObject" type="ml:modelObject" abstract="true"/>
+    <xs:complexType name="modelObject" abstract="true"/>
+</xs:schema>

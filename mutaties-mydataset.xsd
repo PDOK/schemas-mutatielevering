@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:mlm="http://www.kadaster.nl/schemas/mutatielevering-mydataset/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-mydataset/1.0" elementFormDefault="qualified">
+    <!-- Geef zelf een naam en een namespace aan deze XSD en voeg desgewenst eigen informatie toe. -->
+    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        schemaLocation="mutaties-generiek.xsd"/>
+    <xs:element name="mijnDatasetMutaties">
+        <xs:annotation>
+            <xs:documentation>Geef zelf een naam aan dit element.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ml:mutatieBericht"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="mijnObject" type="mlm:mijnObject" substitutionGroup="ml:modelObject"/>
+    <xs:complexType name="mijnObject">
+        <xs:complexContent>
+            <xs:extension base="ml:modelObject">
+                <xs:choice>
+                    <xs:annotation>
+                        <xs:documentation>Voeg de eigen objecten hier toe</xs:documentation>
+                    </xs:annotation>
+                    <xs:element name="object1">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="attribuut1" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mlb:bgtMutaties
+    xmlns="http://www.opengis.net/citygml/2.0"
+    xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
+    xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+    xmlns:imgeo="http://www.geostandaarden.nl/imgeo/2.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 mutaties-bgt.xsd">
+    <ml:mutatieBericht>
+        <ml:dataset>bgt</ml:dataset>
+        <ml:inhoud>
+            <ml:gebied>49446,49447,49444,49445</ml:gebied>
+            <ml:periode>
+                <ml:beginInclusief>2017-01-01T00:00:00.000+01:00</ml:beginInclusief>
+                <ml:eindExclusief>2017-01-02T00:00:00.000+01:00</ml:eindExclusief>
+            </ml:periode>
+        </ml:inhoud>
+        <!-- meer metadatavelden, nog te bepalen -->
+        <ml:mutatieGroep>
+            <ml:toevoeging objectType="pand" objectId="G0307.0094191ab49a4175a278d76e02076f00">
+                <ml:wordt id="98c76f28-1ba5-11e7-abc8-a3d0097a97f2">
+                    <mlb:bgtObject>
+                        <cityObjectMember>
+                            <BuildingPart xmlns="http://www.opengis.net/citygml/building/2.0">
+                                <creationDate xmlns="http://www.opengis.net/citygml/2.0">2014-05-06</creationDate>
+                                <imgeo:LV-publicatiedatum>2017-03-29T16:10:21.000</imgeo:LV-publicatiedatum>
+                                <imgeo:relatieveHoogteligging>0</imgeo:relatieveHoogteligging>
+                                <imgeo:inOnderzoek>false</imgeo:inOnderzoek>
+                                <imgeo:tijdstipRegistratie>2014-05-06T22:58:46.000</imgeo:tijdstipRegistratie>
+                                <imgeo:identificatie>
+                                    <imgeo:NEN3610ID>
+                                        <imgeo:namespace>NL.IMGeo</imgeo:namespace>
+                                        <imgeo:lokaalID>G0307.0094191ab49a4175a278d76e02076f00</imgeo:lokaalID>
+                                    </imgeo:NEN3610ID>
+                                </imgeo:identificatie>
+                                <imgeo:bronhouder>G0307</imgeo:bronhouder>
+                                <imgeo:bgt-status codeSpace="http://www.geostandaarden.nl/imgeo/def/2.1#Status">bestaand</imgeo:bgt-status>
+                                <imgeo:plus-status codeSpace="http://www.geostandaarden.nl/imgeo/def/2.1#VoidReasonValue">geenWaarde</imgeo:plus-status>
+                                <imgeo:identificatieBAGPND>0123209999990078</imgeo:identificatieBAGPND>
+                                <imgeo:geometrie2dGrondvlak>
+                                    <gml:MultiSurface xmlns:gml="http://www.opengis.net/gml">
+                                        <gml:surfaceMember>
+                                            <gml:Polygon>
+                                                <gml:exterior>
+                                                    <gml:LinearRing>
+                                                        <gml:posList srsDimension="2">154706.520 464059.953 154708.941 464058.238 154712.493 464063.252 154710.067 464064.970 154706.520 464059.953</gml:posList>
+                                                    </gml:LinearRing>
+                                                </gml:exterior>
+                                            </gml:Polygon>
+                                        </gml:surfaceMember>
+                                    </gml:MultiSurface>
+                                </imgeo:geometrie2dGrondvlak>
+                            </BuildingPart>
+                        </cityObjectMember>
+                    </mlb:bgtObject>
+                </ml:wordt>
+            </ml:toevoeging>
+        </ml:mutatieGroep>
+    </ml:mutatieBericht>
+</mlb:bgtMutaties>

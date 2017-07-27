@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mld:dkkMutaties
+    xmlns:mld="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0"
+    xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+    xmlns:brk_krt="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0 mutaties-dkk.xsd">
+    <ml:mutatieBericht>
+        <ml:dataset>kadastralekaartv3</ml:dataset>
+        <ml:inhoud>
+            <ml:gebied>49446,49447,49444,49445</ml:gebied>
+            <ml:periode>
+                <ml:beginInclusief>2017-01-01T00:00:00.000+01:00</ml:beginInclusief>
+                <ml:eindExclusief>2017-01-02T00:00:00.000+01:00</ml:eindExclusief>
+            </ml:periode>
+        </ml:inhoud>
+        <!-- meer metadatavelden, nog te bepalen -->
+        <ml:mutatieGroep>
+            <ml:toevoeging objectType="perceel" objectId="NL.IMKAD.KadastraalObject.470690961">
+                <ml:wordt id="fc5cba6f-f1cf-4618-9292-cf219c26775a">
+                    <mld:dkkObject>
+                        <brk_krt:Perceel gml:id="NL.IMKAD.KadastraalObject.470690961">
+                            <brk_krt:identificatie>
+                                <brk_krt:NEN3610ID>
+                                    <brk_krt:namespace>NL.IMKAD.KadastraalObject</brk_krt:namespace>
+                                    <brk_krt:lokaalID>470690961</brk_krt:lokaalID>
+                                </brk_krt:NEN3610ID>
+                            </brk_krt:identificatie>
+                            <brk_krt:historie>
+                                <brk_krt:KadasterHistorie>
+                                    <brk_krt:logischTijdstipOntstaan>2009-03-27T23:59:59.000
+                                </brk_krt:logischTijdstipOntstaan>
+                                </brk_krt:KadasterHistorie>
+                            </brk_krt:historie>
+                            <brk_krt:kadastraleAanduiding>
+                                <brk_krt:TypeKadastraleAanduiding>
+                                    <brk_krt:kadastraleGemeente>
+                                        <brk_krt:KadastraleGemeenteKeuze>
+                                            <brk_krt:AKRKadastraleGemeenteCode>MTT00</brk_krt:AKRKadastraleGemeenteCode>
+                                        </brk_krt:KadastraleGemeenteKeuze>
+                                    </brk_krt:kadastraleGemeente>
+                                    <brk_krt:sectie>G</brk_krt:sectie>
+                                    <brk_krt:perceelnummer>6239</brk_krt:perceelnummer>
+                                </brk_krt:TypeKadastraleAanduiding>
+                            </brk_krt:kadastraleAanduiding>
+                            <brk_krt:begrenzingPerceel>
+                                <gml:Polygon xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_5558086">
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList count="17" srsDimension="2">178469.437 317850.431 178473.03 317846.279 178473.343 317846.649 178473.441 317846.536 178482.657 317854.431 178489.872 317860.652 178493.954 317864.18 178491.705 317866.78 178490.815 317866.033 178490.528 317866.355 178490.463 317866.297 178489.371 317867.544 178486.264 317864.823 178479.058 317858.585 178469.849 317850.69 178469.751 317850.803 178469.437 317850.431</gml:posList>
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:Polygon>
+                            </brk_krt:begrenzingPerceel>
+                            <brk_krt:kadastraleGrootte>
+                                <brk_krt:TypeOppervlak>
+                                    <brk_krt:waarde>149</brk_krt:waarde>
+                                </brk_krt:TypeOppervlak>
+                            </brk_krt:kadastraleGrootte>
+                            <brk_krt:perceelnummerRotatie>40.8</brk_krt:perceelnummerRotatie>
+                            <brk_krt:perceelnummerVerschuiving>
+                                <brk_krt:TypePerceelnummerVerschuiving>
+                                    <brk_krt:deltaX>0</brk_krt:deltaX>
+                                    <brk_krt:deltaY>0</brk_krt:deltaY>
+                                </brk_krt:TypePerceelnummerVerschuiving>
+                            </brk_krt:perceelnummerVerschuiving>
+                            <brk_krt:plaatscoordinaten>
+                                <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_5558087">
+                                    <gml:pos>178485.174 317859.716</gml:pos>
+                                </gml:Point>
+                            </brk_krt:plaatscoordinaten>
+                        </brk_krt:Perceel>
+                    </mld:dkkObject>
+                </ml:wordt>
+            </ml:toevoeging>
+        </ml:mutatieGroep>
+    </ml:mutatieBericht>
+</mld:dkkMutaties>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:mlm="http://www.kadaster.nl/schemas/mutatielevering-bag/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+    xmlns:aglvc="http://www.kadaster.nl/schemas/IMBAG/adressengebouwen-lvc/v20150501"
+    targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-bag/1.0" elementFormDefault="qualified">
+    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        schemaLocation="mutaties-generiek.xsd"/>
+    <xs:import namespace="http://www.kadaster.nl/schemas/IMBAG/adressengebouwen-lvc/v20150501"
+        schemaLocation="IMBAG/adressengebouwen-lvc/v20150501/IMBAG_AdressenGebouwenLVC_v1_0_0.xsd"/>
+    <xs:element name="bagMutaties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ml:mutatieBericht"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="bagObject" type="mlm:bagObject" substitutionGroup="ml:modelObject"/>
+    <xs:complexType name="bagObject">
+        <xs:complexContent>
+            <xs:extension base="ml:modelObject">
+                <xs:choice>
+                    <xs:element ref="aglvc:Woonplaats"/>
+                    <xs:element ref="aglvc:OpenbareRuimte"/>
+                    <xs:element ref="aglvc:Pand"/>
+                    <xs:element ref="aglvc:Nummeraanduiding"/>
+                    <xs:element ref="aglvc:Ligplaats"/>
+                    <xs:element ref="aglvc:Standplaats"/>
+                    <xs:element ref="aglvc:Verblijfsobject"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

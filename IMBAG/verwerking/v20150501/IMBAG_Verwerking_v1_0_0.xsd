@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:v="http://www.kadaster.nl/schemas/IMBAG/verwerking/v20150501"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.kadaster.nl/schemas/IMBAG/verwerking/v20150501"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0-2">
+   <xs:annotation>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/uri">http://www.kadaster.nl/schemas/IMBAG/verwerking</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/version">1.0.0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/phase">2</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/release">20150501</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/generated">2015-06-30 11:32:20</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/schema-info/svn">$Id$</xs:appinfo>
+      <xs:documentation source="http://www.imvertor.org/schema-info/file-location">verwerking/v20150501/IMBAG_Verwerking_v1_0_0.xsd</xs:documentation>
+      <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+            This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+        </xs:documentation>
+      <xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Package ten behoeve van het toevoegen van de verkorte naam openbareruimte. Deze is overgenomen uit het LV-BAG producten model. </xs:documentation>
+   </xs:annotation>
+   <xs:element name="Verwerking" type="v:Verwerking" abstract="false">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Procesgegevens met betrekking tot de bijwerking(en) van BAG gegevens in de LV.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="Verwerking" abstract="false">
+      <xs:sequence>
+         <xs:element name="tijdstipverwerking"
+                     type="xs:dateTime"
+                     minOccurs="1"
+                     maxOccurs="1">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het registratie tijdstip waarin de LV een besluit vanuit een bronhouder heeft verwerkt en de bijgewerkte gegevens beschikbaar zijn geworden voor Afnemers. </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

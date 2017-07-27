@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp1 (x64) (http://www.altova.com) by Kadaster (Kadaster) -->
+<xs:schema xmlns:ag="http://www.kadaster.nl/schemas/IMBAG/adressengebouwen/v20150501" xmlns:t="http://www.kadaster.nl/schemas/IMBAG/IMBAG-typen/v20150501" xmlns:v="http://www.kadaster.nl/schemas/IMBAG/verwerking/v20150501" xmlns:gml="http://www.opengis.net/gml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kadaster.nl/schemas/IMBAG/adressengebouwen/v20150501" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0-2">
+	<xs:annotation>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/uri">http://www.kadaster.nl/schemas/IMBAG/adressengebouwen</xs:appinfo>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/version">1.0.0</xs:appinfo>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/phase">2</xs:appinfo>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/release">20150501</xs:appinfo>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/generated">2015-06-30 11:32:20</xs:appinfo>
+		<xs:appinfo source="http://www.imvertor.org/schema-info/svn">$Id$</xs:appinfo>
+		<xs:documentation source="http://www.imvertor.org/schema-info/file-location">adressengebouwen/v20150501/IMBAG_AdressenGebouwen_v1_0_0.xsd</xs:documentation>
+		<xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+            This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+        </xs:documentation>
+		<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Dit package bevat alle klassen die behoren bij de representatie van BAG objecten uit de landelijke voorziening BAG. Dit is een UML representatie van de objecten en attributen zoals beschreven in de catalogus basisregistraties adressen en gebouwen, versie 2009. Voor de omschrijving van de objecten en attributen wordt verwezen naar de catalogus.  </xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://www.kadaster.nl/schemas/IMBAG/IMBAG-typen/v20150501" schemaLocation="../../IMBAG-typen/v20150501/IMBAG_Typen_v1_0_0.xsd"/>
+	<xs:import namespace="http://www.kadaster.nl/schemas/IMBAG/verwerking/v20150501" schemaLocation="../../verwerking/v20150501/IMBAG_Verwerking_v1_0_0.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/bag-gml.xsd"/>
+	<xs:element name="_AdresseerbaarObject" type="ag:_AdresseerbaarObject" abstract="true">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een ligplaats, verblijfsobject of standplaats.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="_AdresseerbaarObject" abstract="true">
+		<xs:sequence>
+			<xs:element name="nevenadres" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence minOccurs="1">
+						<xs:element ref="ag:Nummeraanduiding" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="hoofdadres" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="ag:Nummeraanduiding"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Ligplaats" type="ag:Ligplaats" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een LIGPLAATS is een formeel door de gemeenteraad als
+zodanig aangewezen plaats in het water, al dan niet aangevuld
+met een op de oever aanwezig terrein of een gedeelte daarvan,
+dat bestemd is voor het permanent afmeren van een voor woon-,
+bedrijfsmatige- of recreatieve doeleinden geschikt vaartuig.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Ligplaats" abstract="false">
+		<xs:complexContent>
+			<xs:extension base="ag:_AdresseerbaarObject">
+				<xs:sequence>
+					<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bron" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van de LIGPLAATS heeft plaatsgevonden.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een LIGPLAATS.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ligplaatsGeometrie" type="gml:SurfacePropertyType" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De tweedimensionale geometrische representatie van de
+omtrekken van een LIGPLAATS.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ligplaatsStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusLigplaats</xs:appinfo>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een LIGPLAATS, waarin
+de betreffende LIGPLAATS zich bevindt.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een LIGPLAATS geldig zijn.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Nummeraanduiding" type="ag:Nummeraanduiding" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een NUMMERAANDUIDING is een door de gemeenteraad als
+zodanig toegekende aanduiding van een adresseerbaar object.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Nummeraanduiding" abstract="false">
+		<xs:sequence>
+			<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bron" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van de NUMMERAANDUIDING heeft plaatsgevonden.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="huisletter" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een door of namens het gemeentebestuur ten aanzien
+van een adresseerbaar object toegekende toevoeging
+aan een huisnummer in de vorm van een alfanumeriek
+teken.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1"/>
+						<xs:pattern value="[a-zA-Z]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="huisnummer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een door of namens het gemeentebestuur ten aanzien
+van een adresseerbaar object toegekende nummering.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+						<xs:pattern value="[1-9]([0-9]{0,4})"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="huisnummertoevoeging" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een door of namens het gemeentebestuur ten aanzien
+van een adresseerbaar object toegekende nadere
+toevoeging aan een huisnummer of een combinatie van
+huisnummer en huisletter.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4"/>
+						<xs:pattern value="([a-z,A-Z,0-9])+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een NUMMERAANDUIDING.
+
+Wanneer de nummeraanduiding niet is opgenomen in de BAG reegistratie, dan is geen identificatie toegekend, </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nummeraanduidingStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusNaamgeving</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een
+NUMMERAANDUIDING, waarin de betreffende
+NUMMERAANDUIDING zich bevindt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postcode" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De door TNT Post vastgestelde code behorende bij een
+bepaalde combinatie van een straatnaam en een
+huisnummer.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6"/>
+						<xs:pattern value="[1-9][0-9][0-9][0-9][A-Z][A-Z]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een NUMMERAANDUIDING geldig zijn.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="typeAdresseerbaarObject" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGTypeAdresseerbaarObject</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De aard van een als zodanig benoemde
+NUMMERAANDUIDING.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="gerelateerdeOpenbareRuimte" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een OPENBARE RUIMTE
+waaraan een adresseerbaar object is gelegen.</xs:documentation>
+					</xs:annotation>
+					<xs:choice minOccurs="1" maxOccurs="1">
+						<xs:element ref="ag:OpenbareRuimte"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="gerelateerdeWoonplaats" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Unieke aanduiding van de woonplaats waarbinnen het
+object waaraan de NUMMERAANDUIDING is toegekend
+is gelegen. Dit gegeven wordt opgenomen indien het object is gelegen in een andere woonplaats dan de openbare ruimte waaraan de nummeraanduiding is gerelateerd.</xs:documentation>
+					</xs:annotation>
+					<xs:choice minOccurs="1" maxOccurs="1">
+						<xs:element ref="ag:Woonplaats"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<xs:element name="OpenbareRuimte" type="ag:OpenbareRuimte" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een OPENBARE RUIMTE is een door de gemeenteraad als
+zodanig aangewezen benaming van een binnen 1 woonplaats
+gelegen buitenruimte.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="OpenbareRuimte" abstract="false">
+		<xs:sequence>
+			<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bron" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van de OPENBARE RUIMTE heeft plaatsgevonden.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een OPENBARE RUIMTE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="openbareRuimteNaam" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een naam die aan een OPENBARE RUIMTE is toegekend in een daartoe strekkend formeel gemeentelijk besluit.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="80"/>
+						<xs:pattern value="\S.*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="openbareruimteStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusNaamgeving</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een OPENBARE
+RUIMTE, waarin de betreffende OPENBARE RUIMTE
+zich bevindt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="openbareRuimteType" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGTypeOpenbareRuimte</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De aard van de als zodanig benoemde OPENBARE
+RUIMTE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een OPENBARE RUIMTE geldig zijn.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="metVerkorteNaam" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="v:Verwerking" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="gerelateerdeWoonplaats" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Unieke aanduiding van de woonplaats waarbinnen een
+OPENBARE RUIMTE is gelegen.</xs:documentation>
+					</xs:annotation>
+					<xs:choice minOccurs="1" maxOccurs="1">
+						<xs:element ref="ag:Woonplaats"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<xs:element name="Pand" type="ag:Pand" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een PAND is de kleinste, bij de totstandkoming functioneel en
+bouwkundig constructief zelfstandige eenheid, die direct en
+duurzaam met de aarde is verbonden.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Pand" abstract="false">
+		<xs:sequence>
+			<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut aanduidingRecordInactief op J gezet. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bouwjaar" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De aanduiding van het jaar waarin een PAND
+oorspronkelijk als bouwkundig gereed is opgeleverd.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4"/>
+						<xs:pattern value="[0-9]{4}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bron" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van het PAND heeft plaatsgevonden.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Elk pand waarvan gegevens zijn opgenomen in de Basis
+Gebouwen Registratie, wordt uniek aangeduid door middel
+van een identificatiecode. Deze identificatiecode bestaat
+uit de viercijferige gemeentecode volgens GBA tabel 33,
+gevolgd door een codering voor de objecttypering en een
+voor de registrerende gemeente uniek volgnummer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pandGeometrie" type="gml:SurfacePropertyType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De minimaal tweedimensionale geometrische
+representatie van de omtrekken van een PAND.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pandstatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusPand</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een PAND, waarin het
+betreffende PAND zich bevindt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een PAND geldig zijn.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<xs:element name="Standplaats" type="ag:Standplaats" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een STANDPLAATS is een formeel door de gemeenteraad als
+zodanig aangewezen terrein of een gedeelte daarvan, dat
+bestemd is voor het permanent plaatsen van een niet direct en
+duurzaam met de aarde verbonden en voor woon -,
+bedrijfsmatige - of recreatieve doeleinden geschikte ruimte.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Standplaats" abstract="false">
+		<xs:complexContent>
+			<xs:extension base="ag:_AdresseerbaarObject">
+				<xs:sequence>
+					<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bron" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van de STANDPLAATS heeft plaatsgevonden.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een STANDPLAATS.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="standplaatsGeometrie" type="gml:SurfacePropertyType" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De tweedimensionale geometrische representatie van de
+omtrekken van een STANDPLAATS.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="standplaatsStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusStandplaats</xs:appinfo>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een STANDPLAATS,
+waarin de betreffende STANDPLAATS zich bevindt.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een STANDPLAATS geldig zijn.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Verblijfsobject" type="ag:Verblijfsobject" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een VERBLIJFSOBJECT is de kleinste binnen één of meerdere
+panden gelegen en voor woon -, bedrijfsmatige - of recreatieve
+doeleinden geschikte eenheid van gebruik, die ontsloten wordt
+via een eigen toegang vanaf de openbare weg, een erf of een
+gedeelde verkeersruimte en die onderwerp kan zijn van
+rechtshandelingen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Verblijfsobject" abstract="false">
+		<xs:complexContent>
+			<xs:extension base="ag:_AdresseerbaarObject">
+				<xs:sequence>
+					<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="bron" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van het VERBLIJFSOBJECT heeft plaatsgevonden.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="gebruiksdoelVerblijfsobject" type="t:Waardelijst" minOccurs="1" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGGebruiksdoel</xs:appinfo>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een categorisering van de gebruiksdoelen van het
+betreffende VERBLIJFSOBJECT, zoals dit formeel door
+de overheid als zodanig is toegestaan.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="identificatie" type="t:Objectnummering" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduiding van een VERBLIJFSOBJECT.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="oppervlakteVerblijfsobject" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De gebruiksoppervlakte van een VERBLIJFSOBJECT in
+gehele vierkante meters.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:integer">
+								<xs:totalDigits value="6"/>
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="999999"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een VERBLIJFSOBJECT geldig zijn.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="verblijfsobjectGeometrie" type="t:PuntOfVlak" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De geometrische representatie van een VERBLIJFSOBJECT.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="verblijfsobjectStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusVerblijfsobject</xs:appinfo>
+							<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een
+VERBLIJFSOBJECT, waarin het betreffende
+VERBLIJFSOBJECT zich bevindt.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="gerelateerdPand" minOccurs="1" maxOccurs="1">
+						<xs:complexType>
+							<xs:annotation>
+								<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De unieke aanduidingen van de PANDEN waarvan het
+VERBLIJFSOBJECT onderdeel uitmaakt.</xs:documentation>
+							</xs:annotation>
+							<xs:sequence minOccurs="1">
+								<xs:element ref="ag:Pand" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Woonplaats" type="ag:Woonplaats" abstract="false">
+		<xs:annotation>
+			<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een WOONPLAATS is een door de gemeenteraad als
+zodanig aangewezen gedeelte van het gemeentelijk
+grondgebied.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Woonplaats" abstract="false">
+		<xs:sequence>
+			<xs:element name="aanduidingRecordCorrectie" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een numeriek gegeven waarin aangegeven wordt hoe vaak een voorkomen van een object n.a.v. een toekomstige mutatie is gecorrigeerd. Het gecorrigeerde gegeven zal derhalve nooit meer geldig worden. Uit deze waarde wordt aanduidingRecordInactief afgeleid. Indien dit veld een 0 bevat is het gegeven actief. In alle andere gevallen is het record inactief en wordt het attribuut </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="aanduidingRecordInactief" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De oorspronkelijke toekomstige mutatie wordt gecorrigeerd en op “inactief” gezet. Het attribuut "aanduiding record inactief" krijgt de waarde "J". Wanneer een voorkomen op inactief wordt gezet, betekent dit dat het voorkomen raadpleegbaar blijft, maar dat het bij het opvragen van de levenscyclus van het object niet voorkomt  in de geldige tijdslijn (opeenvolging van in de tijd  aaneengesloten voorkomens) .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bron" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Het vastgestelde document op basis waarvan een opname, mutatie of een in de historie plaatsen van gegevens ten aanzien van de WOONPLAATS heeft plaatsgevonden.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Bron" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="identificatie" type="t:Woonplaatscodering" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De landelijk unieke aanduiding van een WOONPLAATS,
+zoals vastgesteld door de beheerder van de landelijke
+tabel voor woonplaatsen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="inOnderzoek" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee wordt aangegeven dat een
+onderzoek wordt uitgevoerd naar de juistheid van een of
+meerdere gegevens van het betreffende object.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="officieel" type="t:Indicatie" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een aanduiding waarmee kan worden aangegeven dat
+een object in de registratie is opgenomen als gevolg van
+een feitelijke constatering, zonder dat er op het moment
+van opname sprake is van een formele grondslag voor
+deze opname.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tijdvakgeldigheid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">Een periode waarin de gegevens die worden bijgehouden over een WOONPLAATS geldig zijn.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="t:Tijdvakgeldigheid" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="woonplaatsGeometrie" type="t:VlakOfMultiVlak" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De tweedimensionale geometrische representatie van het
+vlak dat wordt gevormd door de omtrekken van een
+woonplaats.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="woonplaatsNaam" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De benaming van een door het gemeentebestuur
+aangewezen WOONPLAATS.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="80"/>
+						<xs:pattern value="\S.*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="woonplaatsStatus" type="t:Waardelijst" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/BAGStatusWoonplaats</xs:appinfo>
+					<xs:documentation source="http://www.imvertor.org/schema-info/technical-documentation">De fase van de levenscyclus van een WOONPLAATS,
+waarin de betreffende WOONPLAATS zich bevindt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+</xs:schema>
