@@ -17,6 +17,9 @@
                 <ml:beginInclusief>2017-01-01T00:00:00.000+01:00</ml:beginInclusief>
                 <ml:eindExclusief>2017-01-02T00:00:00.000+01:00</ml:eindExclusief>
             </ml:periode>
+            <ml:objectTypen>
+                <ml:objectType>WPL</ml:objectType>
+            </ml:objectTypen>
         </ml:inhoud>
         <ml:mutatieGroep>
             <ml:toevoeging objectType="WPL" objectId="0001">

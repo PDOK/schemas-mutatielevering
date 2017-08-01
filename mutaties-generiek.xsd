@@ -7,7 +7,6 @@
             <xs:sequence>
                 <xs:element name="dataset" type="xs:string"/>
                 <xs:element name="inhoud" type="ml:inhoud"/>
-                <!-- TODO meer metadata -->
                 <xs:element name="mutatieGroep" type="ml:mutatieGroep" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -17,10 +16,14 @@
         <xs:sequence>
             <xs:element name="gebied" type="xs:string"/>
             <xs:element name="periode" type="ml:periode"/>
+            <xs:element name="objectTypen" type="ml:objectTypen"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="periode">
+        <xs:annotation>
+            <xs:documentation>Mutatietijdvlak beschreven door dit bestand. Te gebruiken ter controle van de correcte opeenvolging van mutatiebestanden.</xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="beginInclusief" type="xs:dateTime">
                 <xs:annotation>
@@ -35,6 +38,12 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="objectTypen">
+        <xs:sequence>
+            <xs:element name="objectType" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="mutatieGroep">
         <xs:choice maxOccurs="unbounded">
             <xs:element name="toevoeging" type="ml:toevoeging"/>
@@ -43,7 +52,6 @@
         </xs:choice>
     </xs:complexType>
 
-    <!-- Toevoeging -->
     <xs:complexType name="toevoeging">
         <xs:sequence>
             <xs:element name="wordt" type="ml:toestand"/>
@@ -52,7 +60,6 @@
         <xs:attribute name="objectId" type="xs:string"/>
     </xs:complexType>
 
-    <!-- Wijziging -->
     <xs:complexType name="wijziging">
         <xs:sequence>
             <xs:element name="was" type="ml:toestand"/>
@@ -62,7 +69,6 @@
         <xs:attribute name="objectId" type="xs:string"/>
     </xs:complexType>
 
-    <!-- Verwijdering -->
     <xs:complexType name="verwijdering">
         <xs:sequence>
             <xs:element name="was" type="ml:toestand"/>
@@ -71,15 +77,20 @@
         <xs:attribute name="objectId" type="xs:string"/>
     </xs:complexType>
 
-    <!-- Was of wordt -->
     <xs:complexType name="toestand">
+        <xs:annotation>
+            <xs:documentation>Was of wordt</xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element ref="ml:modelObject"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>
 
-    <!-- Object uit het datamodel van de dataset -->
-    <xs:element name="modelObject" type="ml:modelObject" abstract="true"/>
+    <xs:element name="modelObject" type="ml:modelObject" abstract="true">
+        <xs:annotation>
+            <xs:documentation>Object uit het datamodel van de dataset</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:complexType name="modelObject" abstract="true"/>
 </xs:schema>
