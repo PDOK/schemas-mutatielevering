@@ -8,7 +8,7 @@
     xmlns:t="http://www.kadaster.nl/schemas/IMBAG/IMBAG-typen/v20150501"
     xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
     xmlns:aglvc="http://www.kadaster.nl/schemas/IMBAG/adressengebouwen-lvc/v20150501"
-    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bag/1.0 mutaties-bag.xsd">
+    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bag/1.0 mutatielevering-bag-1.0.xsd">
     <ml:mutatieBericht>
         <ml:dataset>bag</ml:dataset>
         <ml:inhoud>

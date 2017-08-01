@@ -6,7 +6,7 @@
         xmlns:brk_krt="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
         targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0" elementFormDefault="qualified">
     <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
-        schemaLocation="mutaties-generiek.xsd"/>
+        schemaLocation="mutatielevering-generiek-1.0.xsd"/>
     <xs:import namespace="http://www.kadaster.nl/gbkn" schemaLocation="http://www.kadaster.nl/schemas/GBKN/gbkn.xsd"/>
     <xs:import namespace="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
         schemaLocation="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101/brkkadastralekaart_v1_1_0.xsd"/>

@@ -5,7 +5,7 @@
     xmlns:brk_krt="https://www.kadaster.nl/schemas/brkkadastralekaart/v20160101"
     xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0 mutaties-dkk.xsd">
+    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-dkk/1.0 mutatielevering-dkk-1.0.xsd">
     <ml:mutatieBericht>
         <ml:dataset>kadastralekaartv3</ml:dataset>
         <ml:inhoud>

@@ -5,7 +5,7 @@
     xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
     xmlns:imgeo="http://www.geostandaarden.nl/imgeo/2.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 mutaties-bgt.xsd">
+    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 mutatielevering-bgt-1.0.xsd">
     <ml:mutatieBericht>
         <ml:dataset>bgt</ml:dataset>
         <ml:inhoud>

@@ -5,7 +5,7 @@
         targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-mydataset/1.0" elementFormDefault="qualified">
     <!-- Geef zelf een naam en een namespace aan deze XSD en voeg desgewenst eigen informatie toe. -->
     <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
-        schemaLocation="mutaties-generiek.xsd"/>
+        schemaLocation="mutatielevering-generiek-1.0.xsd"/>
     <xs:element name="mijnDatasetMutaties">
         <xs:annotation>
             <xs:documentation>Geef zelf een naam aan dit element.</xs:documentation>
