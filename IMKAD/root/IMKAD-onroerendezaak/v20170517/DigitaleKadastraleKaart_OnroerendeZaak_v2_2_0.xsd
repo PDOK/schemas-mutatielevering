@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:OnroerendeZaak="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak/v20170517"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:imvert="http://www.imvertor.org/schema/system"
+           xmlns:Historie="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-historie/v20170517"
+           xmlns:Typen="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-typen/v20170517"
+           xmlns:GML3="http://www.opengis.net/gml/3.2"
+           xmlns:NEN3610="http://www.geonovum.nl/NEN3610/schemas/v20110301"
+           xmlns:KadastraleKaartProduct="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product/v20170517"
+           xmlns:KadastraalObject="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-kadastraalobject/v20170517"
+           targetNamespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak/v20170517"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.2.0-2">
+   <xs:annotation>
+            <xs:appinfo source="http://www.imvertor.org/model-info/project">imkad</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/application">DigitaleKadastraleKaart</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/release">20170517</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/version">2.2.0</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/phase">2</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/uri">http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/generated">2017-07-11T12:07:41Z</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/file-location">IMKAD-onroerendezaak/v20170517/DigitaleKadastraleKaart_OnroerendeZaak_v2_2_0.xsd</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generated">July 11, 2017 at 12:07:41</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generator">Imvertor OS 1.25.6.20170710</xs:appinfo>
+            <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+        This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+    </xs:documentation>
+            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: OnroerendeZaak
+Definition: 
+Explanation: 
+</xs:documentation>
+         </xs:annotation>
+   <xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-historie/v20170517"
+              schemaLocation="../../IMKAD-historie/v20170517/DigitaleKadastraleKaart_Historie_v2_2_0.xsd"/>
+   <xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-typen/v20170517"
+              schemaLocation="../../IMKAD-typen/v20170517/DigitaleKadastraleKaart_Typen_v2_1_0.xsd"/>
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="../../../gml/3.2.1/gml.xsd"/>
+   <xs:import namespace="http://www.geonovum.nl/NEN3610/schemas/v20110301"
+              schemaLocation="../../../NEN3610/v20110301/NEN3610_NEN3610_v1_0_0.xsd"/>
+   <xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product/v20170517"
+              schemaLocation="../../Product/v20170517/DigitaleKadastraleKaart_KadastraleKaartProduct_v2_2_0.xsd"/>
+   <xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-kadastraalobject/v20170517"
+              schemaLocation="../../IMKAD-kadastraalobject/v20170517/DigitaleKadastraleKaart_KadastraalObject_v2_1_0.xsd"/>
+         
+         <xs:element name="KadastraleGrens"
+               type="OnroerendeZaak:KadastraleGrensType"
+               substitutionGroup="GML3:AbstractFeature">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: KadastraleGrens
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="KadastraleGrensType">
+            <xs:complexContent>
+               <xs:extension base="GML3:AbstractFeatureType">
+                  <xs:sequence>
+                     <xs:element name="historie"
+                           nillable="false"
+                           type="Historie:KadasterHistorieType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: historie
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="type" type="Typen:WaardelijstPropertyType">
+                        <xs:annotation>
+                           <xs:appinfo source="http://www.imvertor.org/data-info/uri">http://www.kadaster.nl/schemas/waardelijsten/TypeGrens</xs:appinfo>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: type
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="grenslijn" type="GML3:CurvePropertyType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: grenslijn
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="identificatie" nillable="false" type="NEN3610:NEN3610ID">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: identificatie
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element minOccurs="0"
+                           name="perceelLinks"
+                           nillable="false"
+                           type="KadastraleKaartProduct:PerceelReferentieType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelLinks
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element minOccurs="0"
+                           name="perceelRechts"
+                           nillable="false"
+                           type="KadastraleKaartProduct:PerceelReferentieType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelRechts
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="KadastraleGrensPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:KadastraleGrens"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="GML3:AssociationAttributeGroup"/>
+            <xs:attributeGroup ref="GML3:OwnershipAttributeGroup"/>
+         </xs:complexType>
+         <xs:element name="_OnroerendeZaak"
+               type="OnroerendeZaak:_OnroerendeZaakType"
+               abstract="true"
+               substitutionGroup="KadastraalObject:_KadastraalObject">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: _OnroerendeZaak
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="_OnroerendeZaakType" abstract="true">
+            <xs:complexContent>
+               <xs:extension base="KadastraalObject:_KadastraalObjectType">
+                  <xs:sequence>
+                     <xs:element name="historie"
+                           nillable="false"
+                           type="Historie:KadasterHistorieType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: historie
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="kadastraleAanduiding"
+                           type="OnroerendeZaak:TypeKadastraleAanduidingPropertyType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: kadastraleAanduiding
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="_OnroerendeZaakPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:_OnroerendeZaak"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="GML3:AssociationAttributeGroup"/>
+            <xs:attributeGroup ref="GML3:OwnershipAttributeGroup"/>
+         </xs:complexType>
+         <xs:element name="Perceel"
+               type="OnroerendeZaak:PerceelType"
+               substitutionGroup="OnroerendeZaak:_OnroerendeZaak">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: Perceel
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="PerceelType">
+            <xs:complexContent>
+               <xs:extension base="OnroerendeZaak:_OnroerendeZaakType">
+                  <xs:sequence>
+                     <xs:element name="begrenzingPerceel" type="GML3:SurfacePropertyType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: begrenzingPerceel
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="kadastraleGrootte"
+                           type="OnroerendeZaak:TypeOppervlakPropertyType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: kadastraleGrootte
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                     <xs:element name="perceelslabel"
+                           nillable="false"
+                           type="OnroerendeZaak:LabelType">
+                        <xs:annotation>
+                           <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelslabel
+Definition: 
+Explanation: 
+</xs:documentation>
+                        </xs:annotation>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="PerceelPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:Perceel"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="GML3:AssociationAttributeGroup"/>
+            <xs:attributeGroup ref="GML3:OwnershipAttributeGroup"/>
+         </xs:complexType>
+         <xs:element name="TypeKadastraleAanduiding"
+               type="OnroerendeZaak:TypeKadastraleAanduidingType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: TypeKadastraleAanduiding
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="TypeKadastraleAanduidingType">
+            <xs:sequence>
+               <xs:element name="kadastraleGemeente" type="Typen:WaardelijstPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: kadastraleGemeente
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sectie">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: sectie
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                        <xs:pattern value="\S.*"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="perceelnummer" type="xs:integer">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelnummer
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="TypeKadastraleAanduidingPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:TypeKadastraleAanduiding"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="TypeOppervlak" type="OnroerendeZaak:TypeOppervlakType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: TypeOppervlak
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="TypeOppervlakType">
+            <xs:sequence>
+               <xs:element name="waarde" type="xs:decimal">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: waarde
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="soortGrootte" type="Typen:WaardelijstPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: soortGrootte
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="TypeOppervlakPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:TypeOppervlak"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="TypePerceelnummerVerschuiving"
+               type="OnroerendeZaak:TypePerceelnummerVerschuivingType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: TypePerceelnummerVerschuiving
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="TypePerceelnummerVerschuivingType">
+            <xs:sequence>
+               <xs:element name="deltaX" type="xs:decimal">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: deltaX
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="deltaY" type="xs:decimal">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: deltaY
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="TypePerceelnummerVerschuivingPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="OnroerendeZaak:TypePerceelnummerVerschuiving"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="Label" type="OnroerendeZaak:LabelType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: Label
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="LabelType">
+            <xs:sequence>
+               <xs:element name="labelTekst">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: labelTekst
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+                  <xs:simpleType>
+                     <xs:restriction base="xs:string">
+                        <xs:pattern value="\S.*"/>
+                     </xs:restriction>
+                  </xs:simpleType>
+               </xs:element>
+               <xs:element name="rotatie" type="xs:decimal" minOccurs="0">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: rotatie
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="verschuiving"
+                     type="OnroerendeZaak:TypePerceelnummerVerschuivingPropertyType"
+                     minOccurs="0">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: verschuiving
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="locatie" type="GML3:PointPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: locatie
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

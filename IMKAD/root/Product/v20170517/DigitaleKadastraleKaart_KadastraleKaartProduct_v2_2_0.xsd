@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:KadastraleKaartProduct="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product/v20170517"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:imvert="http://www.imvertor.org/schema/system"
+           xmlns:OnroerendeZaak="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak/v20170517"
+           xmlns:NEN3610="http://www.geonovum.nl/NEN3610/schemas/v20110301"
+           targetNamespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product/v20170517"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.2.0-2">
+   <xs:annotation>
+            <xs:appinfo source="http://www.imvertor.org/model-info/project">imkad</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/application">DigitaleKadastraleKaart</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/release">20170517</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/version">2.2.0</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/phase">2</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/uri">http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/model-info/generated">2017-07-11T12:07:41Z</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/file-location">Product/v20170517/DigitaleKadastraleKaart_KadastraleKaartProduct_v2_2_0.xsd</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generated">July 11, 2017 at 12:07:41</xs:appinfo>
+            <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generator">Imvertor OS 1.25.6.20170710</xs:appinfo>
+            <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+        This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+    </xs:documentation>
+            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: KadastraleKaartProduct
+Definition: 
+Explanation: 
+</xs:documentation>
+         </xs:annotation>
+   <xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak/v20170517"
+              schemaLocation="../../IMKAD-onroerendezaak/v20170517/DigitaleKadastraleKaart_OnroerendeZaak_v2_2_0.xsd"/>
+   <xs:import namespace="http://www.geonovum.nl/NEN3610/schemas/v20110301"
+              schemaLocation="../../../NEN3610/v20110301/NEN3610_NEN3610_v1_0_0.xsd"/>
+         
+         <xs:element name="KadastraleKaartProduct"
+               type="KadastraleKaartProduct:KadastraleKaartProductType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: KadastraleKaartProduct
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="KadastraleKaartProductType">
+            <xs:sequence>
+               <xs:element minOccurs="0"
+                     maxOccurs="unbounded"
+                     name="perceelMember"
+                     nillable="false"
+                     type="OnroerendeZaak:PerceelPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelMember
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element minOccurs="0"
+                     maxOccurs="unbounded"
+                     name="grensMember"
+                     nillable="false"
+                     type="OnroerendeZaak:KadastraleGrensPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: grensMember
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="KadastraleKaartProductPropertyType">
+            <xs:sequence minOccurs="0">
+               <xs:element ref="KadastraleKaartProduct:KadastraleKaartProduct"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="PerceelReferentie"
+               type="KadastraleKaartProduct:PerceelReferentieType">
+            <xs:annotation>
+               <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: PerceelReferentie
+Definition: 
+Explanation: 
+</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:complexType name="PerceelReferentieType">
+            <xs:sequence>
+               <xs:element name="perceelID" nillable="false" type="NEN3610:NEN3610ID">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Name: perceelID
+Definition: 
+Explanation: 
+</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
