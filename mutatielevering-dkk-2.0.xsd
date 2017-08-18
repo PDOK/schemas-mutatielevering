@@ -6,6 +6,13 @@
 		targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-dkk/2.0" elementFormDefault="qualified">
 	<xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
 		schemaLocation="mutatielevering-generiek-1.0.xsd"/>
+	<!-- Import van gbkn.xsd of cityGMLBase.xsd vervalt. Ook in de header van deze XSD kunnen xmlns:gbkn en
+	xmlns:citygml vervallen. In plaats van GBKN zal BGT geleverd worden (Pand- en OpenbareRuimteLabel-objecten).
+	Leveren van zowel BGT- als Kadastrale objecten zal niet lukken in één XML omdat beide producten verwijzen naar
+	andere xlink- en gml-locaties en BGT een andere GML-versie gebruikt dan de Digitale Kadastrale Kaart.
+	<xs:import namespace="http://www.kadaster.nl/gbkn" schemaLocation="http://www.kadaster.nl/schemas/GBKN/gbkn.xsd"/>
+	<xs:import namespace="http://www.opengis.net/citygml/2.0"
+		schemaLocation="http://schemas.opengis.net/citygml/2.0/cityGMLBase.xsd"/>-->
 	<xs:import namespace="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-onroerendezaak/v20170517"
 		schemaLocation="IMKAD/root/IMKAD-onroerendezaak/v20170517/DigitaleKadastraleKaart_OnroerendeZaak_v2_2_0.xsd"/>
 	<xs:element name="dkkMutaties">
@@ -20,6 +27,9 @@
 		<xs:complexContent>
 			<xs:extension base="ml:modelObject">
 				<xs:choice>
+					<!--<xs:element ref="gbkn:Annotatie"/>
+					<xs:element ref="gbkn:Bebouwing"/>
+					<xs:element ref="citygml:cityObjectMember"/>-->
 					<xs:element ref="OnroerendeZaak:KadastraleGrens"/>
 					<xs:element ref="OnroerendeZaak:Perceel"/>
 				</xs:choice>

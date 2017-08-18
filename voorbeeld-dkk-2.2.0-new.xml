@@ -7,6 +7,7 @@
     xmlns:NEN3610="http://www.geonovum.nl/NEN3610/schemas/v20110301"
     xmlns:Historie="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-historie/v20170517"
     xmlns:Typen="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/IMKAD-typen/v20170517"
+    xmlns:KadastraleKaartProduct="http://www.kadaster.nl/schemas/IMKAD/DigitaleKadastraleKaart/Product/v20170517"
     xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-dkk/2.0 mutatielevering-dkk-2.0.xsd">
@@ -19,24 +20,71 @@
                 <ml:eindExclusief>2017-01-02T00:00:00.000+01:00</ml:eindExclusief>
             </ml:periode>
             <ml:objectTypen>
-                <ml:objectType>perceel</ml:objectType>
+                <ml:objectType>Perceel</ml:objectType>
+                <ml:objectType>KadastraleGrens</ml:objectType>
             </ml:objectTypen>
         </ml:inhoud>
         <!-- meer metadatavelden, nog te bepalen -->
         <ml:mutatieGroep>
-            <ml:toevoeging objectType="perceel" objectId="NL.IMKAD.KadastraalObject.470690961">
-                <ml:wordt id="fc5cba6f-f1cf-4618-9292-cf219c26775a">
+            <ml:toevoeging objectType="KadastraleGrens" objectId="NL.IMKAD.KadastraalObject.143920783">
+                <ml:wordt id="d210cbac-83fb-11e7-bb31-be2e44b06b34">
                     <mld:dkkObject>
-                        <OnroerendeZaak:Perceel gml:id="NL.IMKAD.KadastraalObject.470690961">
-                            <KadastraalObject:identificatie>
-                                <NEN3610:namespace>NL.IMKAD.KadastraalObject</NEN3610:namespace>
-                                <NEN3610:lokaalID>470690961</NEN3610:lokaalID>
-                            </KadastraalObject:identificatie>
+                        <OnroerendeZaak:KadastraleGrens gml:id="NL.IMKAD.KadastraalObject.143920783">
                             <OnroerendeZaak:historie>
-                                <Historie:logischTijdstipOntstaan>2009-03-27T23:59:59.000</Historie:logischTijdstipOntstaan>
+                                <Historie:logischTijdstipOntstaan>2002-01-14T17:15:47.000</Historie:logischTijdstipOntstaan>
                                 <Historie:statusHistorie>
                                     <Typen:Waardelijst>
-                                        <Typen:code>G</Typen:code>
+                                        <Typen:code>1</Typen:code>
+                                        <Typen:waarde>Geldig</Typen:waarde>
+                                    </Typen:Waardelijst>
+                                </Historie:statusHistorie>
+                            </OnroerendeZaak:historie>
+                            <OnroerendeZaak:type>
+                                <Typen:Waardelijst>
+                                    <Typen:code>2</Typen:code>
+                                    <Typen:waarde>Definitief</Typen:waarde>
+                                </Typen:Waardelijst>
+                            </OnroerendeZaak:type>
+                            <OnroerendeZaak:grenslijn>
+                                <gml:LineString xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_98238293">
+                                    <gml:posList count="18" srsDimension="2">188116.873 472340.659 188007.174 472490.872 187927.742 472561.398 187814.575 472662.515 187726.044 472745.733 187676.444 472782.211 187647.903 472801.582 187603.696 472839.103 187550.893 472883.309 187513.258 472914.831 187482.997 472936.877 187473.444 472945.272 187459.04 472962.17 187448.151 472978.027 187430.758 473005.895 187397.215 473050.743 187246.694 473228.877 187243.302 473231.656</gml:posList>
+                                </gml:LineString>
+                            </OnroerendeZaak:grenslijn>
+                            <OnroerendeZaak:identificatie>
+                                <NEN3610:namespace>NL.IMKAD.KadastraleGrens</NEN3610:namespace>
+                                <NEN3610:lokaalID>143920783</NEN3610:lokaalID>
+                            </OnroerendeZaak:identificatie>
+                            <OnroerendeZaak:perceelLinks>
+                                <KadastraleKaartProduct:perceelID>
+                                    <NEN3610:namespace>NL.IMKAD.KadastraalObject</NEN3610:namespace>
+                                    <NEN3610:lokaalID>140342301</NEN3610:lokaalID>
+                                </KadastraleKaartProduct:perceelID>
+                            </OnroerendeZaak:perceelLinks>
+                            <OnroerendeZaak:perceelRechts>
+                                <KadastraleKaartProduct:perceelID>
+                                    <NEN3610:namespace>NL.IMKAD.KadastraalObject</NEN3610:namespace>
+                                    <NEN3610:lokaalID>143920783</NEN3610:lokaalID>
+                                </KadastraleKaartProduct:perceelID>
+                            </OnroerendeZaak:perceelRechts>
+                        </OnroerendeZaak:KadastraleGrens>
+                    </mld:dkkObject>
+                </ml:wordt>
+            </ml:toevoeging>
+        </ml:mutatieGroep>
+        <ml:mutatieGroep>
+            <ml:toevoeging objectType="perceel" objectId="NL.IMKAD.KadastraalObject.140342301">
+                <ml:wordt id="fc5cba6f-f1cf-4618-9292-cf219c26775b">
+                    <mld:dkkObject>
+                        <OnroerendeZaak:Perceel gml:id="NL.IMKAD.KadastraalObject.140342301">
+                            <KadastraalObject:identificatie>
+                                <NEN3610:namespace>NL.IMKAD.KadastraalObject</NEN3610:namespace>
+                                <NEN3610:lokaalID>140342301</NEN3610:lokaalID>
+                            </KadastraalObject:identificatie>
+                            <OnroerendeZaak:historie>
+                                <Historie:logischTijdstipOntstaan>2015-12-29T10:01:24.000</Historie:logischTijdstipOntstaan>
+                                <Historie:statusHistorie>
+                                    <Typen:Waardelijst>
+                                        <Typen:code>1</Typen:code>
                                         <Typen:waarde>Geldig</Typen:waarde>
                                     </Typen:Waardelijst>
                                 </Historie:statusHistorie>
@@ -45,26 +93,26 @@
                                 <OnroerendeZaak:TypeKadastraleAanduiding>
                                     <OnroerendeZaak:kadastraleGemeente>
                                         <Typen:Waardelijst>
-                                            <Typen:code>630</Typen:code>
-                                            <Typen:waarde>MTT00</Typen:waarde>
+                                            <Typen:code>50</Typen:code>
+                                            <Typen:waarde>Apeldoorn</Typen:waarde>
                                         </Typen:Waardelijst>
                                     </OnroerendeZaak:kadastraleGemeente>
-                                    <OnroerendeZaak:sectie>G</OnroerendeZaak:sectie>
-                                    <OnroerendeZaak:perceelnummer>6239</OnroerendeZaak:perceelnummer>
+                                    <OnroerendeZaak:sectie>AB</OnroerendeZaak:sectie>
+                                    <OnroerendeZaak:perceelnummer>3914</OnroerendeZaak:perceelnummer>
                                 </OnroerendeZaak:TypeKadastraleAanduiding>
                             </OnroerendeZaak:kadastraleAanduiding>
                             <OnroerendeZaak:begrenzingPerceel>
-                                <gml:Polygon xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_5558086">
+                                <gml:Polygon xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_8972378">
                                     <gml:exterior>
                                         <gml:LinearRing>
-                                            <gml:posList count="17" srsDimension="2">178469.437 317850.431 178473.03 317846.279 178473.343 317846.649 178473.441 317846.536 178482.657 317854.431 178489.872 317860.652 178493.954 317864.18 178491.705 317866.78 178490.815 317866.033 178490.528 317866.355 178490.463 317866.297 178489.371 317867.544 178486.264 317864.823 178479.058 317858.585 178469.849 317850.69 178469.751 317850.803 178469.437 317850.431</gml:posList>
+                                            <gml:posList count="128" srsDimension="2">194225.246 472017.657 194197.575 472015.699 194196.893 472015.646 194199.741 472015.082 194201.824 472014.331 194201.947 472014.115 194200.118 472004.319 194199.094 471999.796 194196.876 471993.142 194195.082 471988.747 194192.737 471984.053 194189.873 471979.354 194186.504 471974.486 194183.127 471970.421 194161.748 471946.748 194082.261 471858.47 194082.103 471858.267 194071.522 471844.67 194061.779 471830.151 194059.633 471826.625 194057.551 471823.06 194055.534 471819.459 194053.581 471815.822 194051.694 471812.151 194049.873 471808.446 194048.118 471804.71 194046.431 471800.942 194044.812 471797.145 194043.261 471793.32 194041.779 471789.467 194040.367 471785.588 194039.024 471781.685 194037.752 471777.758 194036.55 471773.809 194035.419 471769.839 194032.511 471758.14 194031.369 471752.766 194030.123 471746.407 194029.053 471740.0 194027.706 471729.017 194026.938 471720.996 194026.37 471715.065 194025.79 471709.017 194024.967 471700.415 194024.601 471696.599 194021.079 471657.87 194019.805 471643.909 194016.749 471610.979 194010.02 471610.936 194005.631 471614.059 194005.34 471613.741 193998.683 471606.46 193999.999 471605.16 194004.354 471600.152 194005.6 471598.431 194006.794 471596.675 194007.938 471594.885 194009.029 471593.062 194010.066 471591.208 194011.049 471589.325 194011.977 471587.414 194014.732 471575.668 194015.151 471575.683 194015.276 471564.546 194006.837 471542.046 194005.339 471512.231 194064.678 471545.356 194060.644 471562.796 194069.508 471564.81 194068.231 471574.727 194063.174 471574.197 194059.932 471573.863 194046.078 471572.438 194042.67 471583.314 194040.155 471591.338 194037.523 471599.738 194037.874 471599.769 194036.17 471606.05 194035.21 471610.44 194035.263 471611.565 194035.72 471621.2 194039.88 471621.68 194045.497 471622.148 194046.135 471628.852 194037.19 471628.1 194038.371 471640.665 194039.21 471649.589 194040.054 471658.563 194040.896 471667.518 194042.221 471681.604 194043.045 471690.724 194043.585 471696.7 194044.124 471702.666 194044.994 471712.307 194046.027 471723.659 194047.062 471733.323 194047.909 471739.251 194048.92 471745.196 194049.857 471750.0 194051.077 471755.263 194052.315 471760.607 194053.644 471765.301 194055.282 471771.083 194057.152 471776.853 194061.092 471787.572 194066.384 471799.267 194067.022 471800.804 194069.961 471806.69 194072.846 471811.899 194076.004 471817.474 194080.993 471825.586 194088.912 471836.73 194091.886 471840.486 194097.03 471846.844 194116.854 471868.968 194151.53 471907.193 194157.066 471913.344 194189.87 471949.79 194195.377 471956.138 194200.433 471962.229 194203.983 471967.016 194207.964 471973.085 194211.782 471979.335 194214.59 471984.867 194218.416 471993.758 194220.724 472000.096 194223.283 472008.748 194225.246 472017.657</gml:posList>
                                         </gml:LinearRing>
                                     </gml:exterior>
                                 </gml:Polygon>
                             </OnroerendeZaak:begrenzingPerceel>
                             <OnroerendeZaak:kadastraleGrootte>
                                 <OnroerendeZaak:TypeOppervlak>
-                                    <OnroerendeZaak:waarde>149</OnroerendeZaak:waarde>
+                                    <OnroerendeZaak:waarde>12435.0</OnroerendeZaak:waarde>
                                     <OnroerendeZaak:soortGrootte>
                                         <Typen:Waardelijst>
                                             <Typen:code>1</Typen:code>
@@ -74,8 +122,8 @@
                                 </OnroerendeZaak:TypeOppervlak>
                             </OnroerendeZaak:kadastraleGrootte>
                             <OnroerendeZaak:perceelslabel>
-                                <OnroerendeZaak:labelTekst>470690961</OnroerendeZaak:labelTekst>
-                                <OnroerendeZaak:rotatie>40.8</OnroerendeZaak:rotatie>
+                                <OnroerendeZaak:labelTekst>12345</OnroerendeZaak:labelTekst>
+                                <OnroerendeZaak:rotatie>0</OnroerendeZaak:rotatie>
                                 <OnroerendeZaak:verschuiving>
                                     <OnroerendeZaak:TypePerceelnummerVerschuiving>
                                         <OnroerendeZaak:deltaX>0</OnroerendeZaak:deltaX>
@@ -83,8 +131,8 @@
                                     </OnroerendeZaak:TypePerceelnummerVerschuiving>
                                 </OnroerendeZaak:verschuiving>
                                 <OnroerendeZaak:locatie>
-                                    <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_5558087">
-                                        <gml:pos>178485.174 317859.716</gml:pos>
+                                    <gml:Point xmlns:gml="http://www.opengis.net/gml/3.2" srsName="urn:ogc:def:crs:EPSG::28992" gml:id="LOCAL_ID_15178203">
+                                        <gml:pos>194065.006 471820.825</gml:pos>
                                     </gml:Point>
                                 </OnroerendeZaak:locatie>
                             </OnroerendeZaak:perceelslabel>
