@@ -15,26 +15,8 @@
     <xs:complexType name="inhoud">
         <xs:sequence>
             <xs:element name="gebied" type="xs:string"/>
-            <xs:element name="periode" type="ml:periode"/>
+            <xs:element name="aanleveringId" type="xs:string"/>
             <xs:element name="objectTypen" type="ml:objectTypen"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="periode">
-        <xs:annotation>
-            <xs:documentation>Mutatietijdvlak beschreven door dit bestand. Te gebruiken ter controle van de correcte opeenvolging van mutatiebestanden.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="beginInclusief" type="xs:dateTime">
-                <xs:annotation>
-                    <xs:documentation>Tijdstip van de mutaties zelf (niet de geldigheid van de gegevens)</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="eindExclusief" type="xs:dateTime">
-                <xs:annotation>
-                    <xs:documentation>Tijdstip van de mutaties zelf (niet de geldigheid van de gegevens)</xs:documentation>
-                </xs:annotation>
-            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
