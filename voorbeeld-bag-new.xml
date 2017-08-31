@@ -13,7 +13,7 @@
         <ml:dataset>bag</ml:dataset>
         <ml:inhoud>
             <ml:gebied>49446,49447,49444,49445</ml:gebied>
-            <ml:aanleveringId>112c8dd8-346b-426e-b06c-75bba97dcd63</aanleveringId>
+            <ml:leveringsId>112c8dd8-346b-426e-b06c-75bba97dcd63</ml:leveringsId>
             <ml:objectTypen>
                 <ml:objectType>WPL</ml:objectType>
             </ml:objectTypen>
