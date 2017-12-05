@@ -1,4 +1,4 @@
-# schemas-mutatielevering
+# Schemas-Mutatielevering
 XML-schema's van de generieke mutatielevering
 
 # Ontwerp XML-mutatieformaat
