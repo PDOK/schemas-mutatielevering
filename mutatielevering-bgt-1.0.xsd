@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
+        xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
         xmlns:citygml="http://www.opengis.net/citygml/2.0"
         targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0" elementFormDefault="qualified">
     <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
