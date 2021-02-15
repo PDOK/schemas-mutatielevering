@@ -4,8 +4,8 @@
         xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
         xmlns:citygml="http://www.opengis.net/citygml/2.0"
         targetNamespace="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0" elementFormDefault="qualified">
-    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/1.0"
-        schemaLocation="mutatielevering-generiek-1.0.xsd"/>
+    <xs:import namespace="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
+        schemaLocation="mutatielevering-generiek-2.0.xsd"/>
     <xs:import namespace="http://www.opengis.net/citygml/2.0"
         schemaLocation="http://schemas.opengis.net/citygml/2.0/cityGMLBase.xsd"/>
     <xs:element name="bgtMutaties">
