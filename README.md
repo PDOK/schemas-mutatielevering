@@ -1,9 +1,7 @@
 # Schemas-Mutatielevering
 Deze github repo bevat de XML-schema's voor mutatielevering.
-
-Deze schema's worden gebruikt voor de mutatieleveringen BRK Kadastrale kaart en de BGT. 
-Voor de Kadastrale kaart is een beschrijving, [Mutatieformaat Kadastrale kaart v.1.0](https://developer.kadaster.nl//schemas/brkkadastralekaart/v20190501/Mutatieformaat%20Kadastrale%20kaart%20v.1.0.pdf), te downloaden op https://developer.kadaster.nl/schemas. Voor de BGT staat op de PDOK website een beschrijving van het (BGT mutatieformaat)[https://www.pdok.nl/bgt-mutatie] 
-Verder is er een voorbeeld client implementatie beschikbaar op [github](https://github.com/PDOK/delta-download-ref-impl) 
+XML-schema's worden gebruikt voor de mutatieleveringen BRK Kadastrale kaart en de BGT. Voor de Kadastrale kaart is een beschrijving van [Mutatieformaat Kadastrale kaart v.1.0](https://developer.kadaster.nl//schemas/brkkadastralekaart/v20190501/Mutatieformaat%20Kadastrale%20kaart%20v.1.0.pdf) op [developer.kadaster.nl](https://developer.kadaster.nl/schemas) te vinden. Voor de BGT is staat deze beschrijving op [pdok.nl](https://www.pdok.nl/bgt-mutatie). 
+Ook is er een voorbeeld client implementatie beschikbaar op [github](https://github.com/PDOK/delta-download-ref-impl). 
 
 # Ontwerp XML-mutatieformaat
 Het XML-mutatieformaat dat door PDOK wordt geleverd, heeft als doel externe partijen te laten “meemuteren” met de actuele stand zoals die wordt bijgehouden in de bron van waaruit wordt geleverd. In het geval van de basisregistraties is dat de betreffende Landelijke Voorziening.
