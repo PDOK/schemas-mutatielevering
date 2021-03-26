@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mlb:bgtMutaties
-    xmlns="http://www.opengis.net/citygml/2.0"
-    xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
-    xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
-    xmlns:imgeo="http://www.geostandaarden.nl/imgeo/2.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 mutatielevering-bgt-1.0.xsd">
+<mlb:bgtMutaties  xmlns="http://www.opengis.net/citygml/2.0"
+xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
+xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
+xmlns:imgeo="http://www.geostandaarden.nl/imgeo/2.1"
+xmlns:gml="http://www.opengis.net/gml"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 https://raw.githubusercontent.com/PDOK/schemas-mutatielevering/master/mutatielevering-bgt-1.0.xsd http://www.geostandaarden.nl/imgeo/2.1 http://register.geostandaarden.nl/gmlapplicatieschema/imgeo/2.1.1/imgeo.xsd">
     <ml:mutatieBericht>
         <ml:dataset>bgt</ml:dataset>
         <ml:inhoud>
+            <ml:mutatieType>initial</ml:mutatieType>
             <ml:gebied>49446,49447,49444,49445</ml:gebied>
             <ml:leveringsId>112c8dd8-346b-426e-b06c-75bba97dcd63</ml:leveringsId>
             <ml:objectTypen>
                 <ml:objectType>pand</ml:objectType>
             </ml:objectTypen>
-            <ml:mutatieType>initial</ml:mutatieType>
         </ml:inhoud>
-        <!-- meer metadatavelden, nog te bepalen -->
         <ml:mutatieGroep>
             <ml:toevoeging objectType="pand" objectId="G0307.0094191ab49a4175a278d76e02076f00">
                 <ml:wordt id="98c76f28-1ba5-11e7-abc8-a3d0097a97f2">

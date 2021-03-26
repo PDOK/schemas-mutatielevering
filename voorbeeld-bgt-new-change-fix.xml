@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mlb:bgtMutaties
-    xmlns="http://www.opengis.net/citygml/2.0"
+<mlb:bgtMutaties xmlns="http://www.opengis.net/citygml/2.0"
     xmlns:mlb="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0"
     xmlns:ml="http://www.kadaster.nl/schemas/mutatielevering-generiek/2.0"
     xmlns:imgeo="http://www.geostandaarden.nl/imgeo/2.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 mutatielevering-bgt-1.0.xsd">
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kadaster.nl/schemas/mutatielevering-bgt/1.0 https://raw.githubusercontent.com/PDOK/schemas-mutatielevering/master/mutatielevering-bgt-1.0.xsd http://www.geostandaarden.nl/imgeo/2.1 http://register.geostandaarden.nl/gmlapplicatieschema/imgeo/2.1.1/imgeo.xsd">
     <ml:mutatieBericht>
         <ml:dataset>bgt</ml:dataset>
         <ml:inhoud>
+            <ml:mutatieType>delta</ml:mutatieType>
             <ml:gebied>49446,49447,49444,49445</ml:gebied>
             <ml:leveringsId>112c8dd8-346b-426e-b06c-75bba97dcd63</ml:leveringsId>
             <ml:objectTypen>
@@ -16,7 +17,6 @@
             </ml:objectTypen>
             <ml:mutatieType>delta</ml:mutatieType>
         </ml:inhoud>
-        <!-- meer metadatavelden, nog te bepalen -->
         <!-- Dag 1: aanmaken van de eerste versie. -->
         <ml:mutatieGroep>
             <ml:toevoeging objectType="pand" objectId="G0855.44cae3deb10200e6e0530a01fa86e02a">
@@ -259,7 +259,9 @@
         </ml:mutatieGroep>
         <!-- Dag 3: versie 1 is fout, versie 2 is goed, we herstellen (alleen) versie 1.
              Merk op dat tijdstipRegistratie, oftewel de formele historie van de authentieke bron, hetzelfde is.
-             Deze is immers niet gewijzigd in de bron. -->
+             Deze is immers niet gewijzigd in de bron. 
+            Let herstelleveringen worden niet ondersteunt door de landelijke voorziening BGT in de huidige situatie komt deze 
+            levering dus niet voor -->
         <ml:mutatieGroep>
             <ml:wijziging objectType="pand" objectId="G0855.44cae3deb10200e6e0530a01fa86e02a">
                 <ml:was id="385e9dbd-1a2b-4f32-bae2-1e5e15c52453">

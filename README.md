@@ -1,5 +1,7 @@
 # Schemas-Mutatielevering
-XML-schema's van de generieke mutatielevering
+Deze github repo bevat de XML-schema's voor mutatielevering.
+XML-schema's worden gebruikt voor de mutatieleveringen BRK Kadastrale kaart en de BGT. Voor de Kadastrale kaart is een beschrijving van [Mutatieformaat Kadastrale kaart v.1.0](https://developer.kadaster.nl//schemas/brkkadastralekaart/v20190501/Mutatieformaat%20Kadastrale%20kaart%20v.1.0.pdf) op [developer.kadaster.nl](https://developer.kadaster.nl/schemas) te vinden. Voor de BGT staat deze beschrijving op [pdok.nl](https://www.pdok.nl/bgt-mutatie). 
+Ook is er een voorbeeld client implementatie beschikbaar op [github](https://github.com/PDOK/delta-download-ref-impl). 
 
 # Ontwerp XML-mutatieformaat
 Het XML-mutatieformaat dat door PDOK wordt geleverd, heeft als doel externe partijen te laten “meemuteren” met de actuele stand zoals die wordt bijgehouden in de bron van waaruit wordt geleverd. In het geval van de basisregistraties is dat de betreffende Landelijke Voorziening.
@@ -11,17 +13,26 @@ Het hier uitgewerkte mutatieformaat introduceert een generiek mechanisme dat van
 Uit het feit dat de bronhouder bepaalt wanneer versies ontstaan en beëindigd worden, volgt het belangrijkste beginsel van dit mutatieformaat: mutaties vinden niet plaats op het niveau van objecten, maar er worden individuele versies daarvan toegevoegd, gewijzigd of verwijderd. Immers is het niet mogelijk om mutaties op objectniveau door te voeren zonder het historiemodel van de betreffende bron te kennen en opnieuw te implementeren in elke applicatie die deze mutaties verwerkt. De volgende voorbeelden geven aan hoe een aantal typische gevallen omgezet worden naar mutaties in dit op versies gebaseerde model.
 
 # Voorbeelden
-Object A ontstaat op 1 april:
-BAG, BGT, BRK: Toevoegen object A versie 1 met begindatum 1 april en einddatum leeg (omdat dit de momenteel geldige versie is).
+ Object A ontstaat op 1 april:
+
+>BAG, BGT, BRK: Toevoegen object A versie 1 met begindatum 1 april en einddatum leeg (omdat dit de momenteel geldige versie is).
+
 Object A wijzigt op 1 mei:
-BAG, BGT, BRK: Wijzigen object A versie 1 om einddatum te veranderen van leeg naar 1 mei. Toevoegen object A versie 2 met begindatum 1 mei en einddatum leeg (omdat dit de momenteel geldige versie is).
+
+>BAG, BGT, BRK: Wijzigen object A versie 1 om einddatum te veranderen van leeg naar 1 mei. Toevoegen object A versie 2 met begindatum 1 mei en einddatum leeg (omdat dit de momenteel geldige versie is).
+
 Object A komt op 1 juni te vervallen:
-BGT, BRK: Wijzigen object A versie 2 om einddatum te veranderen van leeg naar 1 juni.
+
+>BGT, BRK: Wijzigen object A versie 2 om einddatum te veranderen van leeg naar 1 juni.
 BAG: Als BGT, BRK, maar daarnaast: toevoegen object A versie 3 met begindatum 1 juni, einddatum leeg en status “beëindigd”.
+
 Object A versie 1 blijkt een fout te bevatten, die hersteld moet worden zonder versie 2 aan te passen:
-BAG, BGT, BRK: Wijzigen object A versie 1 om de getroffen velden te veranderen van de foutieve in de juiste waarde.
-Door een technische fout blijkt ten onrechte een versie 3 van object A geïntroduceerd te zijn:
-BGT, BRK: Verwijderen object A versie 3.
+
+>BAG, BGT, BRK: Wijzigen object A versie 1 om de getroffen velden te veranderen van de foutieve in de juiste waarde.
+
+Door een technische fout blijkt ten onrechte een versie 3 van object A geïntroduceerd te zijn (Let op het formaat is hier op voorbereid, BGT en BRK leveren echter geen herstel mutaties):
+
+>BGT, BRK: Verwijderen object A versie 3.
 BAG: Wijzigen object A versie 3 om het veld “inactief” op “ja” te zetten.
 
 # Mutatiemodel
